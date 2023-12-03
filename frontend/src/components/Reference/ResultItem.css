@@ -1,0 +1,63 @@
+/* src/components/ResultItem.css */
+.result-item {
+  @apply border border-gray-300 p-4 relative;
+  display: grid;
+  grid-template-rows: auto 1fr; /* Hai hàng, hàng đầu là auto (tự động điều chỉnh kích thước), hàng thứ hai chiếm 1 phần tỷ lệ đồng đều */
+}
+
+.result-item .data-column {
+  grid-row: 1 / span 2; /* Chiếm cả hai hàng, bắt đầu từ hàng thứ nhất và kéo dài 2 hàng */
+}
+
+.result-item .other-columns {
+  display: grid;
+  grid-template-columns: 1fr 4fr; /* Chia làm 5 phần, 1 phần và 4 phần */
+  grid-column-gap: 1rem; /* Khoảng cách giữa các cột */
+  grid-row-gap: 1rem; /* Khoảng cách giữa các hàng trong phần tử con */
+}
+
+
+  .custom-container {
+    display: grid;
+
+  }
+  
+  .custom-child {
+    position: relative;
+    grid-area: 1 / 1 / 2 / 2; /* Xác định vị trí trong grid, có thể điều chỉnh theo ý muốn */
+    border-radius: 0.375rem; /* Độ bo góc của phần tử con */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  }
+  .result-item img {
+    @apply aspect-w-1 aspect-h-1 object-cover rounded;
+    grid-row: span 2;
+  }
+  
+  .result-item h3 {
+    @apply text-lg font-bold cursor-pointer transition duration-300 ease-in-out; /* Thêm transition cho hiệu ứng gạch chân */
+    color: #1a9bf0; /* Màu xanh cho title */
+  }
+  
+  .result-item h3:hover {
+    text-decoration: underline; /* Hiệu ứng gạch chân khi hover */
+  }
+  
+ 
+.result-item p {
+    @apply text-gray-600;
+  }
+  
+  .result-item .date {
+    @apply text-red-500;
+  }
+  
+  .result-item .download-btn {
+    @apply absolute bottom-0 right-0 bg-red-500 text-white px-4 py-2 rounded mt-2 flex items-center space-x-2;
+  }
+  .description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Số dòng hiển thị tối đa */
+    -webkit-box-orient: vertical;
+  }
