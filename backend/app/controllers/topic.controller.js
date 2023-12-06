@@ -4,9 +4,9 @@ const Topic = db.topic;
 
 exports.createTopic = async (req, res) => {
   try {
-    const { name ,description} = req.body
+    const { name ,description,role} = req.body
 
-    const requiredFields = ['name'];
+    const requiredFields = ['name','role'];
 
     const missingFields = requiredFields.filter(field => !req.body[field]);
 
@@ -36,6 +36,7 @@ exports.createTopic = async (req, res) => {
 
       name,
       description
+      ,role
 
     })
     if (createdTopic) {
